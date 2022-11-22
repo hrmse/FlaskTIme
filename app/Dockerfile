@@ -2,7 +2,9 @@ FROM python:alpine3.16
 RUN addgroup app && adduser -S -G app app
 USER app
 WORKDIR /app
-RUN mkdir data
-RUN apt install python3-flask
 COPY . .
+
+RUN pip3 install -r requirements.txt
+RUN apk add python3-flask
+
 CMD flask run
