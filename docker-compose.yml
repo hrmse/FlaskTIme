@@ -23,6 +23,3 @@ services:
     stop_signal: SIGINT
     volumes:
       - app:/app
-
-
-
