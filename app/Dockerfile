@@ -3,5 +3,6 @@ LABEL maintainer="HamidSoftDev@Gmail.com"
 WORKDIR /app
 COPY . .
 RUN pip3 install -r requirements.txt
-RUN apk add python3-flask
-CMD flask run
+#CMD flask run
+CMD python3 app.py
+
