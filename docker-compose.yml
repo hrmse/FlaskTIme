@@ -26,8 +26,8 @@ services:
     volumes:
       - app:/app
 
-    networks:
-      - docky
+    #networks:
+     # - docky
 
 volumes:
   app:
