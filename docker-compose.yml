@@ -1,8 +1,6 @@
 version: "3.9"
 services:
   nginx:
-    networks:
-      - docky 
     container_name: nginx
     hostname: nginx
     image: nginx:stable-alpine
@@ -20,8 +18,6 @@ services:
       - app
       
   app:
-    networks:
-      - docky 
     build: ./app
     # flask requires SIGINT to stop gracefully
     # (default stop signal from Compose is SIGTERM)
