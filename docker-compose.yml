@@ -1,10 +1,10 @@
-version: "3.9"
+version: "3.8"
 services:
   nginx:
     container_name: nginx
     hostname: nginx
     networks:
-      customnetwork:
+      appnetwork:
         ipv4_address: 10.40.50.10
     image: nginx:stable-alpine
     tty: true #...
@@ -28,7 +28,7 @@ services:
   app:
     container_name: FlaskTIme
     networks:
-      customnetwork:
+      appnetwork:
         ipv4_address: 10.40.50.20
     build: ./app
     # flask requires SIGINT to stop gracefully
@@ -37,7 +37,7 @@ services:
     volumes:
       - app:/app
 networks:
-  customnetwork:
+  appnetwork:
     ipam:
       config:
         - subnet: 10.40.50.0/24
