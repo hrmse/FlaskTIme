@@ -10,17 +10,15 @@ services:
     tty: true #...
     stdin_open: true #these 2 options are for detach mode
     
+    ports:
+      - 80:80
+
     #Copy Config file to nginx directory
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-    environment: 
-      - FLASK_SERVER_ADDR=app
-
-    #Reloading nginx service
-    command: /bin/bash -c "envsubst < /tmp/nginx.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'" 
-    ports:
-      - 80:80
    
+    #Reloading nginx service
+    command: /usr/sbin/nginx -s reload
 
     depends_on:
       - app
