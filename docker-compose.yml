@@ -24,15 +24,21 @@ services:
       
   app:
     container_name: FlaskTIme
-    networks:
-      appnetwork:
-        ipv4_address: 10.40.50.20
     build: ./app
+
     # flask requires SIGINT to stop gracefully
     # (default stop signal from Compose is SIGTERM)
     stop_signal: SIGINT
+
+    networks:
+      appnetwork:
+        ipv4_address: 10.40.50.20
+
     volumes:
       - app:/app
+
+
+
 networks:
   appnetwork:
     ipam:
