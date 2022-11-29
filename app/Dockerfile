@@ -1,5 +1,5 @@
 # start by pulling the python image
-FROM python:alpine3.16
+FROM python:3.8-alpine
 
 
 # switch working directory
