@@ -13,9 +13,11 @@ WORKDIR /app
 COPY . .
 
 # install the dependencies and packages fro local
-RUN python3 -m pip install /app/libs/flask-2.2.2.tar.gz
+
 RUN python3 -m pip install /app/libs/Werkzeug-2.2.2.tar.gz
 RUN python3 -m pip install /app/libs/MarkupSafe-2.1.1.tar.gz
+RUN python3 -m pip install /app/libs/flask-2.2.2.tar.gz
+
 RUN python3 -m pip install /app/libs/Jinja-1.2.tar.gz
 RUN python3 -m pip install /app/libs/itsdangerous-2.1.2.tar.gz
 RUN python3 -m pip install /app/libs/gunicorn-20.1.0.tar.gz
