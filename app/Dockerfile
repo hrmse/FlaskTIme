@@ -11,7 +11,7 @@ WORKDIR /app
 COPY . .
 
 # install the dependencies and packages 
-RUN python3 -m pip install Flask==2.2.2
+RUN python3 -m pip install app/flask-2.2.2.tar.gz
 
 
 
