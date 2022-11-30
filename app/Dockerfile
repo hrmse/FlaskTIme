@@ -12,8 +12,7 @@ WORKDIR /app
 COPY . .
 
 # install the dependencies and packages fro local
-RUN python3 -m pip install -r wheelhouse/requirements.txt --no-index --find-links /app/wheelhouse
-
+RUN python3 -m pip install flask
 #RUN pip3 install -r requirements.txt
 
 CMD python3 app.py
