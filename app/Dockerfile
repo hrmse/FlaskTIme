@@ -1,5 +1,5 @@
 # start by pulling the python image
-FROM python:3.8-alpine
+FROM python:3.10-alpine
 
 RUN addgroup app && adduser -S -G app app
 USER app
@@ -13,7 +13,7 @@ WORKDIR /app
 COPY . .
 
 # install the dependencies and packages fro local
-RUN python3 -m pip install -r wheelhouse/requirements.txt --no-index --find-links wheelhouse
+RUN python3 -m pip install -r wheelhouse/requirements.txt --no-index --find-links /app/wheelhouse
 
 #RUN pip3 install -r requirements.txt
 
