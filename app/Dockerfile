@@ -1,8 +1,7 @@
 # start by pulling the python image
 FROM python:3.10-alpine
 
-RUN addgroup app && adduser -S -G app app
-USER app
+
 
 # switch working directory
 WORKDIR /app
